@@ -1,0 +1,64 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "1089bc04143f433ba011864ecac7f8ac",
+    "content-hash": "211fb9d5b75c136857bd2428b5a800e7",
+    "packages": [
+        {
+            "name": "matyhtf/swoole_framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swoole/framework.git",
+                "reference": "879f841ccb2a22609eed39d5481951028ce175a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/swoole/framework/879f841ccb2a22609eed39d5481951028ce175a4.zip",
+                "reference": "879f841ccb2a22609eed39d5481951028ce175a4",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Swoole": "libs/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Tianfeng Han",
+                    "email": "mikan.tenny@gmail.com"
+                }
+            ],
+            "description": "PHP Networking framework & Application Server.",
+            "homepage": "http://www.swoole.com/",
+            "keywords": [
+                "Socket",
+                "client",
+                "framework",
+                "library",
+                "server",
+                "webserver",
+                "websocket"
+            ],
+            "time": "2017-01-03 03:22:33"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "matyhtf/swoole_framework": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
