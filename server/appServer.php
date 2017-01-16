@@ -1,5 +1,6 @@
 <?php
-require_once 'initServer.php';
+//载入初始化文件
+require_once __DIR__ . '/initServer.php';
 
 //设置PID文件的存储路径
 Swoole\Network\Server::setPidFile(__DIR__ . '/appServer.pid');
