@@ -4,6 +4,13 @@
 
 [框架介绍](https://github.com/swoole/framework)
 
+runkit扩展安装(热部署)
+```sh
+git clone --depth=1 -v git@github.com:runkit7/runkit7.git /tmp/runkit-ext
+cd /tmp/runkit-ext && phpize && ./configure && sudo make && sudo make install
+```
+
+
 WebIM部署方法
 ----
 客户端：webim/ ，将此目录加入nginx的静态文件请求中
