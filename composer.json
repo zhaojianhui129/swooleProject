@@ -1,0 +1,13 @@
+{
+  "require":{
+    "matyhtf/swoole_framework": "dev-master",
+    "codeception/codeception": "*",
+    "flow/jsonpath": "> 0.2"
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
+}
