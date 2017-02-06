@@ -15,4 +15,8 @@ class Home extends Swoole\Controller
     {
         echo __METHOD__;
     }
+    function test()
+    {
+        phpinfo();
+    }
 }

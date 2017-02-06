@@ -1,5 +1,6 @@
 <?php
 namespace App\Controller;
+use Hoa\Core\Exception\Exception;
 use Swoole;
 use App;
 
@@ -196,6 +197,7 @@ class Page extends Swoole\Controller
 
     function ip()
     {
+        throw new \Exception("Swoole");
         echo "My ip is ".Swoole\Client::getIP()."\n";
     }
 }

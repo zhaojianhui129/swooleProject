@@ -1,12 +1,12 @@
 <?php
 $log['master'] = array(
     'type' => 'FileLog',
-    'file' => WEBPATH . '/logs/app.logs',
+    'file' => WEBPATH . '/logs/app.log',
 );
 
 $log['test'] = array(
     'type' => 'FileLog',
-    'file' => WEBPATH . '/logs/test.logs',
+    'file' => WEBPATH . '/logs/test.log',
 );
 
 return $log;
