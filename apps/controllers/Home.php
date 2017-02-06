@@ -15,9 +15,18 @@ class Home extends Swoole\Controller
     {
         echo __METHOD__;
     }
-    function test2()
+    function test()
     {
-        echo "asds";
-        var_dump([]);
+        var_dump(model('User')->get(1)->get());
+    }
+
+    /**
+     * 设置favicon显示方法
+     */
+    function favicon()
+    {
+        $favicon = file_get_contents(WEBPATH.'/public/favicon.ico');
+        $this->response->setHeader('Content-Type','image/jpeg');
+        echo $favicon;
     }
 }
