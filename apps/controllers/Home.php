@@ -4,12 +4,12 @@ use Swoole;
 
 class Home extends Swoole\Controller
 {
-    /*function __construct($swoole)
+    function __construct($swoole)
     {
         parent::__construct($swoole);
-        Swoole::$php->session->start();
-        Swoole\Auth::loginRequire();
-    }*/
+        /*Swoole::$php->session->start();
+        Swoole\Auth::loginRequire();*/
+    }
 
     function index()
     {

@@ -19,5 +19,5 @@ Swoole\Network\Server::start(function () {
     //作为守护进程
     //$server->daemonize();
     //启动
-    $server->run(['worker_num' => 1, 'max_request' => 5000, 'log_file' => WEBPATH.'/logs/swoole.logs']);
+    $server->run(['worker_num' => 1, 'max_request' => 5000, 'log_file' => WEBPATH.'/logs/app-swoole.logs']);
 });
