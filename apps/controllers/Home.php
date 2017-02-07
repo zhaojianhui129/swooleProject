@@ -17,7 +17,8 @@ class Home extends Swoole\Controller
     }
     function test()
     {
-        var_dump(model('User')->get(1)->get());
+        $data = model('User')->get(1)->get();
+
     }
 
     /**
