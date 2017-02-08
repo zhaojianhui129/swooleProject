@@ -18,7 +18,7 @@ class Home extends Swoole\Controller
     function test()
     {
         $data = model('User')->get(1)->get();
-        echo json_encode($data);
+        return json_encode($data);
     }
 
     /**

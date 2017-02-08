@@ -18,7 +18,8 @@ class WebSocket extends Swoole\Protocol\WebSocket
 
     function router()
     {
-        var_dump($this->message);
+        //var_dump($this->message);
+        return array('controller' => 'Home', 'view' => 'test');
     }
 
     /**
@@ -40,7 +41,7 @@ class WebSocket extends Swoole\Protocol\WebSocket
         $this->broadcast($client_id, "onOffline: " . $client_id);
     }
 
-    function onMessage_mvc($client_id, $ws)
+    function onMessage($client_id, $ws)
     {
         $this->log("onMessage: " . $client_id . ' = ' . $ws['message']);
 
@@ -54,7 +55,7 @@ class WebSocket extends Swoole\Protocol\WebSocket
     /**
      * 接收到消息时
      */
-    function onMessage($client_id, $ws)
+    function onMessage2($client_id, $ws)
     {
         $this->log("onMessage: " . $client_id . ' = ' . $ws['message']);
         $this->send($client_id, 'Server: ' . $ws['message']);
