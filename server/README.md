@@ -26,3 +26,29 @@ sudo /usr/local/php/bin/php appServer.php start|stop|reload
 ```sh
 sudo /usr/local/php/bin/php websocketServer.php
 ```
+
+####测试socket
+```sh
+sudo /usr/local/php/bin/php websocketClientAsync.php
+sudo /usr/local/php/bin/php websocketClientSync.php 
+telnet 127.0.0.1 9443
+```
+```javascript
+var wsServer = 'ws://127.0.0.1:9443';
+var websocket = new WebSocket(wsServer); 
+websocket.onopen = function (evt) { 
+	console.log("Connected to WebSocket server.");
+}; 
+
+websocket.onclose = function (evt) { 
+	console.log("Disconnected"); 
+}; 
+
+websocket.onmessage = function (evt) { 
+	console.log('Retrieved data from server: ' + evt.data); 
+}; 
+
+websocket.onerror = function (evt, e) {
+	console.log('Error occured: ' + evt.data);
+};
+```
