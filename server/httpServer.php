@@ -4,14 +4,14 @@ require_once __DIR__ . '/initServer.php';
 
 Swoole\Config::$debug = false;
 //设置PID文件的存储路径
-Swoole\Network\Server::setPidFile(__DIR__ . 'httpServer.pid');
+Swoole\Network\Server::setPidFile(WEBPATH . '/server/httpServer.pid');
 /**
  * 显示Usage界面
  * php app_server.php start|stop|reload
  */
 Swoole\Network\Server::start(function () {
     $AppSvr = new Swoole\Protocol\HttpServer();
-    $AppSvr->loadSetting(__DIR__ . '/swoole.ini'); //加载配置文件
+    $AppSvr->loadSetting(WEBPATH . '/server/swoole.ini'); //加载配置文件
     $AppSvr->setDocumentRoot(WEBPATH . '/public/');
     $AppSvr->setLogger(new Swoole\Log\EchoLog(true)); //Logger
 

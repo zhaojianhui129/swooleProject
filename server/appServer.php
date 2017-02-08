@@ -3,17 +3,17 @@
 require_once __DIR__ . '/initServer.php';
 
 //设置PID文件的存储路径
-Swoole\Network\Server::setPidFile(__DIR__ . '/appServer.pid');
+Swoole\Network\Server::setPidFile(WEBPATH . '/server/appServer.pid');
 /**
  * 显示Usage界面
  * php app_server.php start|stop|reload
  */
 Swoole\Network\Server::start(function () {
-    $server = Swoole\Protocol\WebServer::create(__DIR__ . '/swoole.ini');
+    $server = Swoole\Protocol\WebServer::create(WEBPATH . '/server/swoole.ini');
     //设置应用所在的目录
     $server->setAppPath(WEBPATH . '/apps/');
     //设置应用所在的目录
-    $server->setDocumentRoot(WEBPATH . '/public/');
+    $server->setDocumentRoot(WEBPATH);
     //Logger
     $server->setLogger(new \Swoole\Log\EchoLog(WEBPATH . "/logs/webserver.logs"));
     //作为守护进程
