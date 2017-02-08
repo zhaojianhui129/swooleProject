@@ -40,7 +40,7 @@ class WebSocket extends Swoole\Protocol\WebSocket
         $this->broadcast($client_id, "onOffline: " . $client_id);
     }
 
-    function onMessage($client_id, $ws)
+    function onMessage_mvc($client_id, $ws)
     {
         $this->log("onMessage: " . $client_id . ' = ' . $ws['message']);
 
@@ -54,7 +54,7 @@ class WebSocket extends Swoole\Protocol\WebSocket
     /**
      * 接收到消息时
      */
-    function onMessage2($client_id, $ws)
+    function onMessage($client_id, $ws)
     {
         $this->log("onMessage: " . $client_id . ' = ' . $ws['message']);
         $this->send($client_id, 'Server: ' . $ws['message']);
@@ -79,6 +79,7 @@ $AppSvr = new WebSocket();
 $AppSvr->loadSetting(__DIR__ . "/swoole.ini"); //加载配置文件
 $AppSvr->setLogger(new \Swoole\Log\EchoLog(true)); //Logger
 $AppSvr->setAppPath(WEBPATH . '/apps/');
+$AppSvr->setDocumentRoot(WEBPATH . '/public/');
 
 /**
  * 如果你没有安装swoole扩展，这里还可选择
@@ -87,7 +88,7 @@ $AppSvr->setAppPath(WEBPATH . '/apps/');
  * EventTCP 使用libevent，需要安装libevent扩展
  */
 $enable_ssl = false;
-$server = Swoole\Network\Server::autoCreate('0.0.0.0', 9444, $enable_ssl);
+$server = Swoole\Network\Server::autoCreate('0.0.0.0', 9443, $enable_ssl);
 $server->setProtocol($AppSvr);
 //$server->daemonize(); //作为守护进程
 $server->run([
