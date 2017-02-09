@@ -19,7 +19,17 @@ class WebSocket extends Swoole\Protocol\WebSocket
     function router()
     {
         //var_dump($this->message);
-        return array('controller' => 'Home', 'view' => 'test');
+        if ($this->message && isset($this->message['url'])) {
+            $url = $this->message['url'];
+            if (stripos($url, '/') !== false){
+                $urlParam = implode($url, '/');
+                return ['controller' => $urlParam[0], 'view' => $urlParam[1]];
+            }else{
+                return ['controller' => 'Home', 'view' => 'index'];
+            }
+        } else {
+            return ['controller' => 'Home', 'view' => 'index'];
+        }
     }
 
     /**
@@ -45,8 +55,14 @@ class WebSocket extends Swoole\Protocol\WebSocket
     {
         $this->log("onMessage: " . $client_id . ' = ' . $ws['message']);
 
-        $this->message = $ws['message'];
-        $response = Swoole::$php->runMVC();
+        $this->message = json_decode($ws['message'], true);
+        if ($this->message && isset($this->message['sendData'])){
+            Swoole::$php->request = $this->message['sendData'];
+            $response = Swoole::$php->runMVC();
+
+        }else{
+            $response = '无效的数据格式';
+        }
 
         $this->send($client_id, $response);
         //$this->broadcast($client_id, $ws['message']);

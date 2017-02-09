@@ -52,3 +52,13 @@ websocket.onerror = function (evt, e) {
 	console.log('Error occured: ' + evt.data);
 };
 ```
+
+socket发送消息格式:
+```json
+{
+  'url':'home/index',
+  'sendData':{
+    'userName':'test',
+  },
+}
+```
