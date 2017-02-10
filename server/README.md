@@ -51,6 +51,7 @@ websocket.onmessage = function (evt) {
 websocket.onerror = function (evt, e) {
 	console.log('Error occured: ' + evt.data);
 };
+websocket.send('{"url":"Home\/test","sendData":{"kk":"value"}}');
 ```
 
 socket发送消息格式:

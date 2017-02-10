@@ -13,6 +13,7 @@ class WebSocket extends Swoole\Protocol\WebSocket
     function onStart($serv, $worker_id = 0)
     {
         Swoole::$php->router([$this, 'router']);
+        Swoole::setControllerPath(WEBPATH . '/apps/controllersSocket/');
         parent::onStart($serv, $worker_id);
     }
 
@@ -59,12 +60,12 @@ class WebSocket extends Swoole\Protocol\WebSocket
         if ($this->message && isset($this->message['sendData'])){
             Swoole::$php->request = $this->message['sendData'];
             $response = Swoole::$php->runMVC();
-
+            $response = ['code'=>1000,'msg'=>'操作成功','content'=>$response];
         }else{
-            $response = '无效的数据格式';
+            $response = ['code'=>1001, 'msg'=>'无效的数据格式'];
         }
 
-        $this->send($client_id, $response);
+        $this->send($client_id, json_encode($response));
         //$this->broadcast($client_id, $ws['message']);
     }
 
