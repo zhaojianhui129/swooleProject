@@ -13,7 +13,6 @@ class WebSocket extends Swoole\Protocol\WebSocket
     function onStart($serv, $worker_id = 0)
     {
         Swoole::$php->router([$this, 'router']);
-        Swoole::setControllerPath(WEBPATH . '/apps/controllersSocket/');
         parent::onStart($serv, $worker_id);
     }
 
@@ -22,10 +21,11 @@ class WebSocket extends Swoole\Protocol\WebSocket
         //var_dump($this->message);
         if ($this->message && isset($this->message['url'])) {
             $url = $this->message['url'];
-            if (stripos($url, '/') !== false){
-                $urlParam = implode($url, '/');
+            if (stripos($url, '/') !== false) {
+                $urlParam = explode('/', $url);
+
                 return ['controller' => $urlParam[0], 'view' => $urlParam[1]];
-            }else{
+            } else {
                 return ['controller' => 'Home', 'view' => 'index'];
             }
         } else {
@@ -57,12 +57,13 @@ class WebSocket extends Swoole\Protocol\WebSocket
         $this->log("onMessage: " . $client_id . ' = ' . $ws['message']);
 
         $this->message = json_decode($ws['message'], true);
-        if ($this->message && isset($this->message['sendData'])){
+        if ($this->message && isset($this->message['sendData'])) {
             Swoole::$php->request = $this->message['sendData'];
             $response = Swoole::$php->runMVC();
-            $response = ['code'=>1000,'msg'=>'操作成功','content'=>$response];
-        }else{
-            $response = ['code'=>1001, 'msg'=>'无效的数据格式'];
+            var_dump($response);
+            $response = ['code' => 1000, 'msg' => '操作成功', 'content' => $response];
+        } else {
+            $response = ['code' => 1001, 'msg' => '无效的数据格式'];
         }
 
         $this->send($client_id, json_encode($response));
@@ -102,7 +103,7 @@ Swoole\Network\Server::start(function () {
     $AppSvr = new WebSocket();
     $AppSvr->loadSetting(__DIR__ . "/swoole.ini"); //加载配置文件
     $AppSvr->setLogger(new \Swoole\Log\EchoLog(true)); //Logger
-    $AppSvr->setAppPath(WEBPATH . '/apps/');
+    $AppSvr->setAppPath(WEBPATH . '/appsSocket/');
     $AppSvr->setDocumentRoot(WEBPATH . '/public/');
 
     /**

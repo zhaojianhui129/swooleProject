@@ -20,8 +20,9 @@ class Home extends Swoole\Controller
     function test()
     {
         $data = model('User')->get(1)->get();
+        $data['test'] = '赵建辉';
 
-        return json_encode($data);
+        return $data;
     }
 
     /**
