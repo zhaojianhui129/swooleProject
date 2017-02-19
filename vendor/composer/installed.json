@@ -1822,55 +1822,6 @@
         ]
     },
     {
-        "name": "matyhtf/swoole_framework",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/swoole/framework.git",
-            "reference": "0df22c8713e471611d3e56c12b83639efd64b506"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/swoole/framework/0df22c8713e471611d3e56c12b83639efd64b506.zip",
-            "reference": "0df22c8713e471611d3e56c12b83639efd64b506",
-            "shasum": ""
-        },
-        "require": {
-            "filp/whoops": "^2.1",
-            "symfony/console": "3.2"
-        },
-        "time": "2017-01-25T02:25:50+00:00",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Swoole": "libs/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "LGPL"
-        ],
-        "authors": [
-            {
-                "name": "Tianfeng Han",
-                "email": "mikan.tenny@gmail.com"
-            }
-        ],
-        "description": "PHP Networking framework & Application Server.",
-        "homepage": "http://www.swoole.com/",
-        "keywords": [
-            "Socket",
-            "client",
-            "framework",
-            "library",
-            "server",
-            "webserver",
-            "websocket"
-        ]
-    },
-    {
         "name": "filp/whoops",
         "version": "2.1.6",
         "version_normalized": "2.1.6.0",
@@ -2515,5 +2466,54 @@
         ],
         "description": "Symfony Process Component",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "matyhtf/swoole_framework",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/swoole/framework.git",
+            "reference": "0df22c8713e471611d3e56c12b83639efd64b506"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/swoole/framework/0df22c8713e471611d3e56c12b83639efd64b506.zip",
+            "reference": "0df22c8713e471611d3e56c12b83639efd64b506",
+            "shasum": ""
+        },
+        "require": {
+            "filp/whoops": "^2.1",
+            "symfony/console": "3.2"
+        },
+        "time": "2017-01-25T02:25:50+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Swoole": "libs/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Tianfeng Han",
+                "email": "mikan.tenny@gmail.com"
+            }
+        ],
+        "description": "PHP Networking framework & Application Server.",
+        "homepage": "http://www.swoole.com/",
+        "keywords": [
+            "Socket",
+            "client",
+            "framework",
+            "library",
+            "server",
+            "webserver",
+            "websocket"
+        ]
     }
 ]
