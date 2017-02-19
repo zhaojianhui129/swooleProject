@@ -2469,26 +2469,26 @@
     },
     {
         "name": "matyhtf/swoole_framework",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "1.16.3",
+        "version_normalized": "1.16.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/swoole/framework.git",
-            "reference": "0df22c8713e471611d3e56c12b83639efd64b506"
+            "reference": "6ac9cdbef5d6ac0751d49f67e746d15044eac8cd"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/swoole/framework/0df22c8713e471611d3e56c12b83639efd64b506.zip",
-            "reference": "0df22c8713e471611d3e56c12b83639efd64b506",
+            "url": "https://packagist.phpcomposer.com/files/swoole/framework/6ac9cdbef5d6ac0751d49f67e746d15044eac8cd.zip",
+            "reference": "6ac9cdbef5d6ac0751d49f67e746d15044eac8cd",
             "shasum": ""
         },
         "require": {
             "filp/whoops": "^2.1",
             "symfony/console": "3.2"
         },
-        "time": "2017-01-25T02:25:50+00:00",
+        "time": "2017-02-09T09:47:33+00:00",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Swoole": "libs/"

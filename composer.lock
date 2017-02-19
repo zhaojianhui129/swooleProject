@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4629b5ccbb51a2f5b48f71109a10b98",
+    "content-hash": "1066e35f33fd702773c5c7e62d908a17",
     "packages": [
         {
             "name": "behat/gherkin",
@@ -534,16 +534,16 @@
         },
         {
             "name": "matyhtf/swoole_framework",
-            "version": "dev-master",
+            "version": "1.16.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swoole/framework.git",
-                "reference": "0df22c8713e471611d3e56c12b83639efd64b506"
+                "reference": "6ac9cdbef5d6ac0751d49f67e746d15044eac8cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/swoole/framework/0df22c8713e471611d3e56c12b83639efd64b506.zip",
-                "reference": "0df22c8713e471611d3e56c12b83639efd64b506",
+                "url": "https://packagist.phpcomposer.com/files/swoole/framework/6ac9cdbef5d6ac0751d49f67e746d15044eac8cd.zip",
+                "reference": "6ac9cdbef5d6ac0751d49f67e746d15044eac8cd",
                 "shasum": ""
             },
             "require": {
@@ -577,7 +577,7 @@
                 "webserver",
                 "websocket"
             ],
-            "time": "2017-01-25 02:25:50"
+            "time": "2017-02-09T09:47:33+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -2437,9 +2437,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "matyhtf/swoole_framework": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

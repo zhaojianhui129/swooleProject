@@ -1,6 +1,6 @@
 {
   "require":{
-    "matyhtf/swoole_framework": "dev-master",
+    "matyhtf/swoole_framework": "^1.16",
     "codeception/codeception": "*",
     "flow/jsonpath": "> 0.2"
   },
