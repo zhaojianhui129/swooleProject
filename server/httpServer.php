@@ -4,7 +4,7 @@ require_once __DIR__ . '/initServer.php';
 
 Swoole\Config::$debug = false;
 //设置PID文件的存储路径
-Swoole\Network\Server::setPidFile(WEBPATH . '/server/httpServer.pid');
+Swoole\Network\Server::setPidFile(WEBPATH . '/server/pid/httpServer.pid');
 /**
  * 显示Usage界面
  * php app_server.php start|stop|reload
