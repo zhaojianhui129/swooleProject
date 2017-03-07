@@ -1,4 +1,5 @@
 <?php
+//异步任务，类似于任务投递
 //初始化文件
 define('DEBUG', 'on');
 define('DS', DIRECTORY_SEPARATOR);
