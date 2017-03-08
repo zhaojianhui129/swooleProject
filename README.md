@@ -2,6 +2,12 @@
 本项目使用swoole framework官方框架开发.
 框架项目地址：(https://github.com/swoole/framework)
 
+Swoole IDE智能提示
+----
+```shell
+https://github.com/eaglewu/swoole-ide-helper
+```
+
 [框架介绍](https://github.com/swoole/framework)
 
 runkit扩展安装(热部署)

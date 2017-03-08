@@ -9,7 +9,7 @@ $cache['master'] = array(
     'compress' => true, //启用压缩
     'servers' => array(
         array(
-            'host' => '127.0.0.1',
+            'host' => '172.17.0.3',
             'port' => 11211,
             'weight' => 100,
             'persistent' => true,
