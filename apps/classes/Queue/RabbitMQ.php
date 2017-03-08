@@ -33,15 +33,13 @@ class RabbitMQ implements \Swoole\IFace\Queue
 
 
 
-    function __construct($config)
+    public function __construct($config)
     {
-        if (empty($config['id']))
-        {
+        if (empty($config['id'])) {
             $config['id'] = 'master';
         }
         $this->rabbitFactoryKey = $config['id'];
-        if (!empty($config['key']))
-        {
+        if (!empty($config['key'])) {
             $this->queueName = $config['key'];
         }
     }
@@ -72,15 +70,12 @@ class RabbitMQ implements \Swoole\IFace\Queue
     /**
      * 出队
      */
-    function pop()
+    public function pop()
     {
         $ret = $this->channel->basic_get($this->queueName);
-        if ($ret)
-        {
+        if ($ret) {
             return unserialize($ret);
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
@@ -89,7 +84,7 @@ class RabbitMQ implements \Swoole\IFace\Queue
      * 入队
      * @param $data
      */
-    function push($data)
+    public function push($data)
     {
         $sendData = serialize($data);
         $message = new AMQPMessage($sendData, ['content_type'=>'text/plain', 'devlivery_mode' => AMQPMessage::DELIVERY_MODE_PERSISTENT]);
