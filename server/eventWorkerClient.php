@@ -1,6 +1,4 @@
 <?php
-//echo json_encode(['type'=>'Hello','data'=>['name'=>'zhaojianhui','sex'=>'男']]);exit();
-//跑任务的脚本
 /**
  * 配置文件：apps/configs/event.php
  * 事件列表：apps/events/*.php
@@ -18,4 +16,7 @@ require_once WEBPATH . '/vendor/autoload.php';
 //载入swoole frameworkZ框架配置
 require_once WEBPATH . '/vendor/matyhtf/swoole_framework/libs/lib_config.php';
 //执行脚本
-Swoole::$php->event->runWorker(10);
+//Swoole::$php->redis->append('hello', json_encode(['data'=>['name'=>'赵建辉','sex'=>'男']]));
+Swoole::$php->loadModule('queue')->pop(['data'=>['name'=>'赵建辉','sex'=>'男']]);
+//Swoole::$php->queue->pop(['data'=>['name'=>'赵建辉','sex'=>'男']]);
+//var_dump(Swoole::$php->redis->keys('*'));
