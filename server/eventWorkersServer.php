@@ -4,7 +4,7 @@
 /**
  * 配置文件：apps/configs/event.php
  * 事件列表：apps/events/*.php
- * 具体事件处理代码：apps/classes/Handler/*.php
+ * 处理代码：apps/classes/Handler/*.php
  */
 //初始化文件
 define('DEBUG', 'on');
@@ -18,4 +18,4 @@ require_once WEBPATH . '/vendor/autoload.php';
 //载入swoole frameworkZ框架配置
 require_once WEBPATH . '/vendor/matyhtf/swoole_framework/libs/lib_config.php';
 //执行脚本
-Swoole::$php->event->runWorker(100);
+Swoole::$php->event->runWorker(2);

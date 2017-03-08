@@ -65,7 +65,7 @@ php taskClient.php//异步任务投递
 
 EventWorkerServer的使用方法
 ----
-EventWorkerServer是做事件触发功能，
+EventWorkerServer是做事件触发功能，同样一段数据可以同时丢给不同的处理者处理，例如有的数据同时需要
 ```shell
 php eventWorkersServer.php//启动事件触发功能
 php eventWorkersClient.php//触发事件

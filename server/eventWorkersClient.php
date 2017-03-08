@@ -17,5 +17,5 @@ require_once WEBPATH . '/vendor/autoload.php';
 require_once WEBPATH . '/vendor/matyhtf/swoole_framework/libs/lib_config.php';
 //执行脚本
 for ($i=0;$i<=10000;$i++){
-    $res = Swoole::$php->event->trigger("hello", array($i, "hello world", __DIR__));
+    $res = Swoole::$php->event->trigger("hello2", array($i, "打打打死你", __DIR__));
 }

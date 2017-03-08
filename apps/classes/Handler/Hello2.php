@@ -7,7 +7,7 @@ class Hello2 implements Swoole\IFace\EventHandler
 {
     function trigger($type, $data)
     {
-        echo "Handler2: ";
+        echo "事件二: ";
         var_dump($type);
         var_dump($data);
     }

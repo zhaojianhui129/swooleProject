@@ -1,7 +1,6 @@
 <?php
-return array(
-    'handlers' => array(
+return [
+    'handlers' => [
         App\Handler\Hello1::class,
-        App\Handler\Hello2::class,
-    ),
-);
+    ],
+];
