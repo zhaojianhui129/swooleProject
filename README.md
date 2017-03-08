@@ -33,7 +33,7 @@ swoole websocket是支持IE浏览器的，在不支持HTML5标准的浏览器上
 WebSocket服务器
 ----
 ```shell
-php websocket_server.php
+php websocketServer.php
 ```
 客户端websocket_client.html，需要修改js代码中的ip和端口，可以直接用浏览器打开此页面。然后打开chrome的调试工具，或火狐的firebug，
 然后终端执行websocket.send("hello"),向服务器发送信息。
@@ -41,9 +41,10 @@ php websocket_server.php
 HttpServer的使用方法
 ----
 http服务器跟fpm和apache很像，只是去包含documentRoot中的php文件，没有带有任何额外功能。
-与app_server.php不同，http_server.php是没有携带任何Swoole Web框架功能的。
+与appServer.php不同，httpServer.php是没有携带任何Swoole Web框架功能的。
 ```shell
-php http_server.php
+php appServer.php;
+php httpServer.php
 ```
 
 AppServer的使用方法
@@ -53,3 +54,20 @@ URL会路由到Controller的方法中，数据库的处理使用Swoole框架提�
 ```shell
 php app_server.php
 ```
+
+TaskServer的使用方法
+----
+TaskServer是异步任务应用，可将耗时的工作放到异步任务中处理，例如发送邮件，
+```shell
+php taskServer.php//异步任务消耗
+php taskClient.php//异步任务投递
+```
+
+EventWorkerServer的使用方法
+----
+EventWorkerServer是做事件触发功能，
+```shell
+php eventWorkersServer.php//启动事件触发功能
+php eventWorkersClient.php//触发事件
+```
+

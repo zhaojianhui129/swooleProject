@@ -16,7 +16,6 @@ require_once WEBPATH . '/vendor/autoload.php';
 //载入swoole frameworkZ框架配置
 require_once WEBPATH . '/vendor/matyhtf/swoole_framework/libs/lib_config.php';
 //执行脚本
-//Swoole::$php->redis->append('hello', json_encode(['data'=>['name'=>'赵建辉','sex'=>'男']]));
-Swoole::$php->loadModule('queue')->pop(['data'=>['name'=>'赵建辉','sex'=>'男']]);
-//Swoole::$php->queue->pop(['data'=>['name'=>'赵建辉','sex'=>'男']]);
-//var_dump(Swoole::$php->redis->keys('*'));
+for ($i=0;$i<=10000;$i++){
+    $res = Swoole::$php->event->trigger("hello", array($i, "hello world", __DIR__));
+}
