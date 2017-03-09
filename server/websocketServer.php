@@ -93,7 +93,7 @@ class WebSocket extends Swoole\Protocol\WebSocket
 //require __DIR__'/phar://swoole.phar';
 Swoole\Config::$debug = true;
 //设置PID文件的存储路径
-Swoole\Network\Server::setPidFile(WEBPATH . '/server/websocketServer.pid');
+Swoole\Network\Server::setPidFile(WEBPATH . '/server/pid/websocketServer.pid');
 Swoole\Error::$echo_html = false;
 /**
  * 显示Usage界面

@@ -65,9 +65,17 @@ php taskClient.php//异步任务投递
 
 EventWorkerServer的使用方法
 ----
-EventWorkerServer是做事件触发功能，同样一段数据可以同时丢给不同的处理者处理，例如有的数据同时需要
+EventWorkerServer是做事件触发功能,可做异步脚本，同样一段数据可以同时丢给不同的处理者处理，例如有的数据同时需要
 ```shell
 php eventWorkersServer.php//启动事件触发功能
 php eventWorkersClient.php//触发事件
 ```
+
+FtpServer的使用方法
+----
+FtpServer建立ftp服务
+```shell
+sudo /usr/local/php/bin/php ftpServer.php start -w 10
+```
+
 
