@@ -38,6 +38,8 @@ php server/websocketServer.php
 客户端websocket_client.html，需要修改js代码中的ip和端口，可以直接用浏览器打开此页面。然后打开chrome的调试工具，或火狐的firebug，
 然后终端执行websocket.send("hello"),向服务器发送信息。
 
+HttpServer和AppServer虽然可以直接访问，但是还是要配合nginx或apache，因为
+
 HttpServer的使用方法
 ----
 http服务器跟fpm和apache很像，只是去包含documentRoot中的php文件，没有带有任何额外功能。
@@ -48,7 +50,7 @@ php server/httpServer.php
 
 HttpClient的使用方法
 ----
-类似于curl、file_get_contents等方法，用作web请求
+类似于curl、file_get_contents等方法，http请求客户端
 ```shell
 php server/httpClient.php
 ```
