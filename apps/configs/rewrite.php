@@ -15,8 +15,8 @@ $array[] = [
     'get'  => 'app,id',
 ];
 //favicon
-$array[] = [
+/*$array[] = [
     'regx' => 'favicon.ico',
     'mvc' => ['controller' => 'Home','view'=>'favicon'],
-];
+];*/
 return $array;
