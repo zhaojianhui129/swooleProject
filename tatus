@@ -1,0 +1,48 @@
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 88bcae3..be58771 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -38,7 +38,7 @@[m [mphp server/websocketServer.php[m
+ 客户端websocket_client.html，需要修改js代码中的ip和端口，可以直接用浏览器打开此页面。然后打开chrome的调试工具，或火狐的firebug，[m
+ 然后终端执行websocket.send("hello"),向服务器发送信息。[m
+ [m
+[31m-HttpServer和AppServer虽然可以直接访问，但是还是要配合nginx或apache，因为[m
+[32m+[m[32m> HttpServer和AppServer虽然可以直接访问，但是还是要配合nginx或apache，请求静态文件是由Nginx/Apache直接处理，当请求的文件不存在时，发送给Swoole服务器，来进行处理。[m
+ [m
+ HttpServer的使用方法[m
+ ----[m
+[1mdiff --git a/apps/classes/Queue/RabbitMQ.php b/apps/classes/Queue/RabbitMQ.php[m
+[1mindex c8ef443..39a514d 100644[m
+[1m--- a/apps/classes/Queue/RabbitMQ.php[m
+[1m+++ b/apps/classes/Queue/RabbitMQ.php[m
+[36m@@ -42,6 +42,18 @@[m [mclass RabbitMQ implements \Swoole\IFace\Queue[m
+         if (!empty($config['key'])) {[m
+             $this->queueName = $config['key'];[m
+         }[m
+[32m+[m[41m        [m
+[32m+[m[32m        //设置rabbitmq配置值[m
+[32m+[m[32m        global $php;[m
+[32m+[m[32m        $rabbitmqConfig = $php->config['rabbitmq'][$php->factory_key];[m
+[32m+[m[32m        $this->host = $rabbitmqConfig['host'];[m
+[32m+[m[32m        $this->port = $rabbitmqConfig['port'];[m
+[32m+[m[32m        $this->user = $rabbitmqConfig['user'];[m
+[32m+[m[32m        $this->pass = $rabbitmqConfig['pass'];[m
+[32m+[m[32m        $this->vhost = $rabbitmqConfig['vhost'];[m
+[32m+[m
+[32m+[m[32m        //创建连接[m
+[32m+[m[32m        $this->connect();[m
+     }[m
+ [m
+     /**[m
+[1mdiff --git a/composer.json b/composer.json[m
+[1mindex e97911f..43816b6 100644[m
+[1m--- a/composer.json[m
+[1m+++ b/composer.json[m
+[36m@@ -1,6 +1,7 @@[m
+ {[m
+   "require":{[m
+     "matyhtf/swoole_framework": "^1.16",[m
+[32m+[m[32m    "overtrue/wechat":"~3.1",[m
+     "codeception/codeception": "*",[m
+     "flow/jsonpath": "> 0.2",[m
+     "php-amqplib/php-amqplib": "2.6.*"[m

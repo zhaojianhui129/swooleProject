@@ -38,7 +38,7 @@ php server/websocketServer.php
 客户端websocket_client.html，需要修改js代码中的ip和端口，可以直接用浏览器打开此页面。然后打开chrome的调试工具，或火狐的firebug，
 然后终端执行websocket.send("hello"),向服务器发送信息。
 
-HttpServer和AppServer虽然可以直接访问，但是还是要配合nginx或apache，因为
+> HttpServer和AppServer虽然可以直接访问，但是还是要配合nginx或apache，请求静态文件是由Nginx/Apache直接处理，当请求的文件不存在时，发送给Swoole服务器，来进行处理。
 
 HttpServer的使用方法
 ----
